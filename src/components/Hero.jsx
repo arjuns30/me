@@ -130,7 +130,7 @@ export default function Hero() {
 
 <h1>Arjun Suri</h1>
 <p>
-  Future business strategist &amp; engineer — building solutions at the
+  Supply Chains, Operations &amp; Industrial Engineering — building solutions at the
   intersection of innovation and impact.
 </p>
     </section>

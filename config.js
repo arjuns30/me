@@ -4,8 +4,8 @@ const nextConfig = {
     images: {
       unoptimized: true // 👈 optional but useful for GitHub Pages
     },
-    basePath: "/https://github.com/arjuns30/me.git", // 👈 IMPORTANT: match your GitHub repo name
-    assetPrefix: "/https://github.com/arjuns30/me.git",
+    basePath: "/me", // 👈 IMPORTANT: match your GitHub repo name
+    assetPrefix: "/me",
   };
   
   export default nextConfig;
