@@ -5,10 +5,12 @@ import React, { useEffect, useState } from "react";
 const Navbar = () => {
   const sections = [
     "About Me",
-    "Accolades and Awards",
+    "Awards",
     "Work Experience",
     "Certifications",
-    "Research",
+    "Projects",
+    "Campus Involvement",
+    "Resume"
   ];
 
   const [scrolled, setScrolled] = useState(false);
