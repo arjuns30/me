@@ -9,8 +9,7 @@ const Navbar = () => {
     "Work Experience",
     "Certifications",
     "Projects",
-    "Campus Involvement",
-    "Resume"
+    "Campus Involvement"
   ];
 
   const [scrolled, setScrolled] = useState(false);
