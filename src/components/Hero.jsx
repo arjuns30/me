@@ -4,6 +4,7 @@ import gsap from "gsap";
 import "../styles/Hero.css"; // or wherever your file is
 import React, { useState, useEffect, useRef } from "react";
 
+
 const cities = [
   { id: 1, name: "north america", x: 34, y: 28 },
   { id: 2, name: "europe", x: 99, y: 22 },
@@ -13,6 +14,7 @@ const cities = [
 ];
 
 export default function Hero() {
+  const nameRef = useRef(null);
   // Track the active (highlighted) city index
   const [visibleCityIndex, setVisibleCityIndex] = useState(0);
   
@@ -97,6 +99,26 @@ export default function Hero() {
       });
     }
   };
+  //name animation
+  useEffect(() => {
+    if (nameRef.current) {
+      gsap.fromTo(
+        nameRef.current,
+        {
+          scale: 1.5,
+          opacity: 0,
+          y: -20,
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power3.out",
+        }
+      );
+    }
+  }, []);
 
   useEffect(() => {
     runArcCycle();
@@ -128,10 +150,10 @@ export default function Hero() {
         </g>
       </svg>
 
-<h1>Arjun Suri</h1>
+<h1 ref={nameRef}>Arjun Suri</h1>
 <p>
-  Supply Chains, Operations &amp; Industrial Engineering — building solutions at the
-  intersection of innovation and impact.
+  Supply Chains, Operations &amp; Industrial Engineering — 
+  building solutions at the intersection of innovation and impact.
 </p>
     </section>
   );

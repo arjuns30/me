@@ -1,8 +1,9 @@
 // data/content.js
 const content = {
   "About Me": [
-    "I'm Arjun Suri, an aspiring business strategist with a background in industrial and operations engineering and a minor in computer science at the University of Michigan.",
-    "I’m passionate about applying data, global operations, and product strategy to drive scalable, impactful solutions across technology and public-sector spaces."
+    "I'm Arjun Suri, an Industrial and Operations Engineering Major at the University of Michigan (Go Blue!)",
+    "I'm passionate about using technical data driven approaches to build scalable solutions",
+    "My personal interests are: Formula One, Hiking, Board Games, and Stand Up Comedy"
   ],
   "Awards": [
     "Dean's List, University of Michigan",
@@ -16,7 +17,7 @@ const content = {
     "Incoming Supply Chain Management Intern, Stellantis - May 2025",
     "Strategic Consultant, DroneDeploy (Contract) — Jan 2025–Present",
     "Artificial Intelligence Research Assistant, University of Michigan — Feb 2024–Oct 2024",
-    "Sales Data Analytics Intern, Qualcomm — May 2024–Aug 2024",
+    "Sales Data Analytics Ambassador, Qualcomm (Contract) — May 2024–Aug 2024",
     "Debate Coach and Regional Chapter Head, Cogito Debate - Aug 2023-Jan 2024",
     "Project Management Intern, San Diego County — Aug 2023–Jan 2024",
     "Student Outreach Intern, Scott Peters Congressional Office - April 2022-November 2022",
