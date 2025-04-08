@@ -13,11 +13,11 @@
 
 /* Styling for the arc path.
    GSAP will control the dash animation so no CSS keyframes are used here. */
-.arc-path {
-  fill: none;
-  stroke: #00cc66;
-  stroke-width: .8;
-}
+   .arc-path {
+    fill: none;
+    stroke: #00cc66;
+    stroke-width: .8;
+  }
 
 .hero-name {
   font-size: 3rem;
