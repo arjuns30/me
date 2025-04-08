@@ -15,6 +15,7 @@ const cities = [
 
 export default function Hero() {
   const nameRef = useRef(null);
+  const subtitleRef = useRef(null);
   // Track the active (highlighted) city index
   const [visibleCityIndex, setVisibleCityIndex] = useState(0);
   
@@ -99,32 +100,42 @@ export default function Hero() {
       });
     }
   };
-  //name animation
   useEffect(() => {
-    if (nameRef.current) {
-      gsap.fromTo(
-        nameRef.current,
-        {
-          scale: 1.5,
-          opacity: 0,
-          y: -20,
-        },
-        {
-          scale: 1,
-          opacity: 1,
-          y: 0,
-          duration: 1.2,
-          ease: "power3.out",
-        }
-      );
-    }
-  }, []);
-
-  useEffect(() => {
-    runArcCycle();
-    return () => {
-      if (timelineRef.current) timelineRef.current.kill();
-    };
+    const tl = gsap.timeline();
+  
+    tl.fromTo(
+      nameRef.current,
+      {
+        scale: 1.6,
+        opacity: 0,
+        y: -30,
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power2.out",
+      }
+    );
+  
+    tl.fromTo(
+      subtitleRef.current,
+      {
+        opacity: 0,
+        y: 10,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+      },
+      "+=0.2" // slight delay after the name lands
+    );
+  
+    // Start arc animation after both finish
+    tl.add(() => runArcCycle());
   }, []);
 
   return (
@@ -151,8 +162,8 @@ export default function Hero() {
       </svg>
 
 <h1 ref={nameRef}>Arjun Suri</h1>
-<p>
-  Supply Chains, Operations &amp; Industrial Engineering — 
+<p ref={subtitleRef}>
+  Supply Chains, Operations & Industrial Engineering —<br />
   building solutions at the intersection of innovation and impact.
 </p>
     </section>
