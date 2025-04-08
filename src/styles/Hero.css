@@ -18,3 +18,10 @@
   stroke: #00cc66;
   stroke-width: .8;
 }
+
+.hero-name {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  transform-origin: center;
+}
