@@ -9,7 +9,7 @@ const cities = [
   { id: 2, name: "europe", x: 99, y: 22 },
   { id: 3, name: "aus", x: 180, y: 79 },
   { id: 4, name: "india", x: 139, y: 40},
-  {id: 5, name: "brazil", x: 55, y: 71}``
+  {id: 5, name: "brazil", x: 55, y: 71}
 ];
 
 export default function Hero() {
