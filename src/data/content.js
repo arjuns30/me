@@ -40,8 +40,8 @@ const content = {
   ],
   "Campus Involvement": [
     "Co Founder, URB Consulting",
+    "Industrial and Operations Engineering Student Ambassador",
     "Indian American Student Association Community Service Chair",
-    "UMICH Industrial Operations Engineering Student Leadership Board",
     "Kappa Omega Alpha Professional Fraternity",
     "Institute of Industrial and Systems Engineers",
     "Product Motion"
