@@ -1,50 +1,50 @@
 // data/content.js
 const content = {
   "About Me": [
-    "I'm Arjun Suri, an Industrial and Operations Engineering Major at the University of Michigan (Go Blue!)",
-    "I'm passionate about using technical data driven approaches to build scalable solutions",
-    "My personal interests are: Formula One, Hiking, Board Games, and Stand Up Comedy"
+    { title: "I'm Arjun Suri, an Industrial and Operations Engineering Major at the University of Michigan (Go Blue!)", description: "" },
+    { title: "I'm passionate about using technical data driven approaches to build scalable solutions", description: "" },
+    { title: "My personal interests are: Formula One, Hiking, Board Games, and Stand Up Comedy", description: "" }
   ],
   "Awards": [
-    "Dean's List, University of Michigan",
-    "Michigan Mock Trial Opening Round Championship Series",
-    "1st Place, San Diego Coder Fair",
-    "1st Place, San Diego Science and Engineering Fair",
-    "4x National Qualifier, High School Debate",
-    "3x Debate Tournament of Champions",
+    { title: "Dean's List, University of Michigan", description: "" },
+    { title: "Michigan Mock Trial Opening Round Championship Series", description: "" },
+    { title: "1st Place, San Diego Coder Fair", description: "" },
+    { title: "1st Place, San Diego Science and Engineering Fair", description: "" },
+    { title: "4x National Qualifier, High School Debate", description: "" },
+    { title: "3x Debate Tournament of Champions", description: "" }
   ],
   "Work Experience": [
-    "Incoming Supply Chain Management Intern, Stellantis - May 2025",
-    "Strategic Consultant, DroneDeploy (Contract) — Jan 2025–Present",
-    "Artificial Intelligence Research Assistant, University of Michigan — Feb 2024–Oct 2024",
-    "Sales Data Analytics Ambassador, Qualcomm (Contract) — May 2024–Aug 2024",
-    "Debate Coach and Regional Chapter Head, Cogito Debate - Aug 2023-Jan 2024",
-    "Project Management Intern, San Diego County — Aug 2023–Jan 2024",
-    "Student Outreach Intern, Scott Peters Congressional Office - April 2022-November 2022",
-    "CEO and Founder, Ethnic Touch — Jan 2021–Aug 2023"
+    //{ title: "Incoming Supply Chain Management Intern, Stellantis - May 2025", description: "" },
+    { title: "Strategic Consultant, DroneDeploy (Contract) — Jan 2025–Present", description: "" },
+    { title: "Artificial Intelligence Research Assistant, University of Michigan — Feb 2024–Oct 2024", description: "" },
+    { title: "Sales Data Analytics Ambassador, Qualcomm (Contract) — May 2024–Aug 2024", description: "" },
+    { title: "Debate Coach and Regional Chapter Head, Cogito Debate - Aug 2023-Jan 2024", description: "" },
+    { title: "Project Management Intern, San Diego County — Aug 2023–Jan 2024", description: "" },
+    { title: "Student Outreach Intern, Scott Peters Congressional Office - April 2022-November 2022", description: "" },
+    { title: "CEO and Founder, Ethnic Touch — Jan 2021–Aug 2023", description: "" }
   ],
   "Certifications": [
-    "Microsoft Office",
-    "Salesforce Integration",
-    "AI Prompt Engineering",
-    "IBM Watson Cloud AI"
+    { title: "Microsoft Office", description: "" },
+    { title: "Salesforce Integration", description: "" },
+    { title: "AI Prompt Engineering", description: "" },
+    { title: "IBM Watson Cloud AI", description: "" }
   ],
   "Projects": [
-    "Image Resizer, EECS 280, C++",
-    "Machine Learning Post Classifer, EECS 280, C++",
-    "Euchre, EECS 280, C++",
-    "Formula 1 Calander Optimizer, C++",
-    "OpenCV Facial Detection Software for Schools, Python",
-    "Olive Farm Investment Portoflio, IOE 201, Excel",
-    "BioPython Genome Sequencer, Python"
+    { title: "Image Resizer, EECS 280, C++", description: "In C++ created a project which takes in any image and pixel sizes and uses optimization functions" },
+    { title: "Machine Learning Post Classifer, EECS 280, C++", description: "" },
+    { title: "Euchre, EECS 280, C++", description: "" },
+    { title: "Formula 1 Calander Optimizer, C++", description: "" },
+    { title: "OpenCV Facial Detection Software for Schools, Python", description: "" },
+    { title: "Olive Farm Investment Portoflio, IOE 201, Excel", description: "" },
+    { title: "BioPython Genome Sequencer, Python", description: "" }
   ],
   "Campus Involvement": [
-    "Co Founder, URB Consulting",
-    "Industrial and Operations Engineering Student Ambassador",
-    "Indian American Student Association Community Service Chair",
-    "Kappa Omega Alpha Professional Fraternity",
-    "Institute of Industrial and Systems Engineers",
-    "Product Motion"
+    { title: "Co Founder, URB Consulting", description: "" },
+    { title: "Industrial and Operations Engineering Student Ambassador", description: "" },
+    { title: "Indian American Student Association Community Service Chair", description: "" },
+    { title: "Kappa Omega Alpha Professional Fraternity", description: "" },
+    { title: "Institute of Industrial and Systems Engineers", description: "" },
+    { title: "Product Motion", description: "" }
   ]
 };
 

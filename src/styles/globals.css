@@ -179,4 +179,27 @@ a {
 .external-arrow {
   font-size: 0.8rem;
   transform: translateY(-1px);
+}/* --- Expandable Items --- */
+.click-expand-item {
+  list-style: disc;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.click-expand-item .item-title {
+  font-weight: 500;
+  color: #e0e0e0;
+  transition: color 0.3s ease;
+}
+
+.click-expand-item:hover .item-title {
+  color: #006644; /* deep green hover like nav */
+}
+
+.click-expand-item .item-description {
+  font-size: 0.95rem;
+  color: #aaa;
+  line-height: 1.4;
+  margin-left: 1rem;
 }
