@@ -203,3 +203,43 @@ a {
   line-height: 1.4;
   margin-left: 1rem;
 }
+
+.about-me-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-me-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 100%;
+  border: 3px solid #006644;
+  box-shadow: 0 0 10px rgba(0, 255, 150, 0.1);
+}
+
+.about-me-text {
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  list-style-type: disc;
+}
+
+.about-me-text li {
+  margin-bottom: 0.75rem;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .about-me-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-me-text {
+    text-align: center;
+  }
+}
