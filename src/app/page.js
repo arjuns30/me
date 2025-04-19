@@ -1,3 +1,4 @@
+// src/app/page.js
 "use client";
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
@@ -12,7 +13,11 @@ export default function Home() {
       <main className="main">
         <Hero />
         {Object.entries(content).map(([section, items]) => (
-          <SectionBlock key={section} section={section} items={items} />
+          <SectionBlock
+            key={section}
+            section={section}
+            items={items}
+          />
         ))}
       </main>
     </>
@@ -20,11 +25,15 @@ export default function Home() {
 }
 
 function SectionBlock({ section, items }) {
+  // for toggling list items
   const [openIndex, setOpenIndex] = useState(null);
+  const toggleIndex = (i) => setOpenIndex(prev => (prev === i ? null : i));
 
-  const toggleIndex = (index) => {
-    setOpenIndex((prev) => (prev === index ? null : index));
-  };
+  // only for About Me: track which photo is showing
+  const photos = ["/arjun.jpg", "/arjun2.jpg"];
+  const [photoIndex, setPhotoIndex] = useState(0);
+  const cyclePhoto = () =>
+    setPhotoIndex((prev) => (prev + 1) % photos.length);
 
   return (
     <SectionWrapper
@@ -32,38 +41,37 @@ function SectionBlock({ section, items }) {
       title={section}
     >
       {section === "About Me" ? (
-        // About Me: image plus titles to the right
         <div className="about-me-container">
           <img
-            src="/arjun.jpg"
+            src={photos[photoIndex]}
             alt="Arjun Suri"
             className="about-me-photo"
+            style={{ cursor: "pointer" }}
+            onClick={cyclePhoto}
           />
           <ul className="about-me-text">
-            {items.map((item, index) => (
-              // <-- Use item.title, not item
-              <li key={index}>{item.title}</li>
+            {items.map((item, idx) => (
+              <li key={idx}>{item.title}</li>
             ))}
           </ul>
         </div>
       ) : (
-        // All other sections
         <ul>
-          {items.map((item, index) => {
-            // Plain strings (if any)
+          {items.map((item, idx) => {
             if (typeof item === "string") {
-              return <li key={index}>{item}</li>;
+              return <li key={idx}>{item}</li>;
             }
-            // Objects with title/description
             return (
               <li
-                key={index}
+                key={idx}
                 className="click-expand-item"
-                onClick={() => toggleIndex(index)}
+                onClick={() => toggleIndex(idx)}
               >
                 <div className="item-title">{item.title}</div>
-                {openIndex === index && (
-                  <div className="item-description">{item.description}</div>
+                {openIndex === idx && (
+                  <div className="item-description">
+                    {item.description}
+                  </div>
                 )}
               </li>
             );

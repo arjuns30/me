@@ -3,7 +3,8 @@ const content = {
   "About Me": [
     { title: "I'm Arjun Suri, an Industrial and Operations Engineering Major at the University of Michigan (Go Blue!)", description: "" },
     { title: "I'm passionate about using technical data driven approaches to build scalable solutions", description: "" },
-    { title: "My personal interests are: Formula One, Hiking, Board Games, and Stand Up Comedy", description: "" }
+    { title: "My personal interests are: Formula One, Hiking, Board Games, and Stand Up Comedy", description: "" },
+    { title: "Click my picture to see me laugh!", description: ""}
   ],
   "Awards": [
     { title: "Dean's List, University of Michigan", description: "" },

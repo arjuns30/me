@@ -121,45 +121,35 @@ a {
   color: #999;
   font-size: 1.2rem;
 }
-
-/* --- Section Wrapper --- */
+/* in globals.css */
 .section-wrapper {
-  height: 100vh;
+  /* remove this line */ 
+  /* height: 100vh; */
+
+  /* if you want sections at least 70% of viewport tall: */
+  min-height: 70vh;
+
   max-width: 900px;
   margin: 0 auto;
   padding: 8rem 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  /* clip any hidden children so they don’t peek through */
+  overflow: hidden;
+
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .section-wrapper.hidden {
   opacity: 0;
-  transform: translateY(100px);
+  transform: translateY(50px);
   pointer-events: none;
 }
-
 .section-wrapper.visible {
   opacity: 1;
   transform: translateY(0);
-  pointer-events: auto;
-}
-
-.section-wrapper h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: #ffffff;
-}
-
-.section-wrapper ul {
-  padding-left: 1.5rem;
-}
-
-.section-wrapper li {
-  margin-bottom: 0.75rem;
-  color: #bbb;
-  line-height: 1.6;
 }
 
 /* --- Resume Link Arrow --- */
@@ -242,4 +232,68 @@ a {
   .about-me-text {
     text-align: center;
   }
+}
+/*expiramental*/
+.nav-links li a {
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color 0.3s ease;
+}
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #006644;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.nav-links li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+
+.hero-name {
+  background: linear-gradient(90deg, #fff, #aaa, #fff);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 2s ease-out forwards;
+}
+
+@keyframes shine {
+  from { background-position: -100%; }
+  to   { background-position: 200%; }
+}
+.click-expand-item:hover {
+  transform: scale(1.02);
+}
+
+:root {
+  --ease: cubic‑bezier(0.4, 0, 0.2, 1);
+}
+.click-expand-item,
+.section-wrapper {
+  transition-timing-function: var(--ease);
+}
+
+/* In globals.css (or Hero.css) */
+
+main.main {
+  scroll-snap-type: y proximity;    /* “proximity” is less aggressive than “mandatory” */
+  overflow-y: auto;
+  height: 100vh;
+}
+
+/* Hero becomes a snap‑point: */
+.hero {
+  scroll-snap-align: start;
+}
+
+/* Sections remain snap‑points: */
+.section-wrapper {
+  scroll-snap-align: start;
 }
