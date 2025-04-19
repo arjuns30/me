@@ -1,4 +1,5 @@
 // data/content.js
+//fix
 const content = {
   "About Me": [
     { title: "I'm Arjun Suri, an Industrial and Operations Engineering Major at the University of Michigan (Go Blue!)", description: "" },
