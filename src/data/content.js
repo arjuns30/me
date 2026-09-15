@@ -24,53 +24,58 @@ const content = {
   ],
   work: [
     {
+      role: "Enterprise Solutions Architect Intern",
+      org: "Adobe",
+      note: "New York, NY",
+      dates: "June 2026 – August 2026",
+      logo: "/logos/adobe.png",
+    },
+    {
+      role: "Co-Founder and CEO",
+      org: "Pachira",
+      note: "Ann Arbor, MI",
+      dates: "May 2025 – May 2026",
+      logo: "/logos/pachira.png",
+    },
+    {
+      role: "Supply Chain Product Management Intern",
+      org: "GE HealthCare",
+      note: "Milwaukee, WI",
+      dates: "May 2025 – August 2025",
+      logo: "/logos/gehealthcare.png",
+    },
+    {
       role: "Strategic Consultant",
       org: "DroneDeploy",
       note: "Contract",
-      dates: "Jan 2025 – Present",
+      dates: "Jan 2025 – May 2025",
+      logo: "/logos/dronedeploy.png",
     },
     {
-      role: "Artificial Intelligence Research Assistant",
-      org: "University of Michigan",
-      dates: "Feb 2024 – Oct 2024",
-    },
-    {
-      role: "Sales Data Analytics Ambassador",
+      role: "Sales Data Analytics Intern",
       org: "Qualcomm",
-      note: "Contract",
-      dates: "May 2024 – Aug 2024",
-    },
-    {
-      role: "Debate Coach and Regional Chapter Head",
-      org: "Cogito Debate",
-      dates: "Aug 2023 – Jan 2024",
+      note: "San Diego, CA",
+      dates: "May 2024 – August 2024",
+      logo: "/logos/qualcomm.svg",
     },
     {
       role: "Project Management Intern",
       org: "San Diego County",
       dates: "Aug 2023 – Jan 2024",
+      logo: "/logos/sdcounty.png",
     },
     {
       role: "Student Outreach Intern",
       org: "Scott Peters Congressional Office",
       dates: "Apr 2022 – Nov 2022",
-    },
-    {
-      role: "CEO and Founder",
-      org: "Ethnic Touch",
-      dates: "Jan 2021 – Aug 2023",
+      logo: "/logos/congress.svg",
     },
   ],
   projects: [
-    {
-      title: "Image Resizer",
-      detail: "EECS 280 · C++",
-      description:
-        "Takes any image and target pixel sizes and uses optimization functions to resize it.",
-    },
+    { title: "Image Resizer", detail: "EECS 280 · C++" },
     { title: "Machine Learning Post Classifier", detail: "EECS 280 · C++" },
     { title: "Euchre", detail: "EECS 280 · C++" },
-    { title: "Formula 1 Calendar Optimizer", detail: "C++" },
+    { title: "Formula One Season Optimizer", detail: "C++" },
     { title: "OpenCV Facial Detection for Schools", detail: "Python" },
     { title: "Olive Farm Investment Portfolio", detail: "IOE 201 · Excel" },
     { title: "BioPython Genome Sequencer", detail: "Python" },
@@ -89,7 +94,6 @@ const content = {
     "Indian American Student Association Community Service Chair",
     "Kappa Omega Alpha Professional Fraternity",
     "Institute of Industrial and Systems Engineers",
-    "Product Motion",
   ],
 };
 

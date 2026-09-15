@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="U.S. House of Representatives">
+  <path fill="#0A3161" d="M32 6l2.1 6.4H41l-5.6 4.1 2.1 6.5L32 18.9l-5.5 4.1 2.1-6.5L23 12.4h6.9z"/>
+  <path fill="#0A3161" d="M14 28h36v3H14zm3 5h5v18h-5zm9 0h5v18h-5zm8 0h5v18h-5zm9 0h5v18h-5zM12 51h40v4H12z"/>
+  <rect x="27" y="21" width="10" height="7" rx="1" fill="#0A3161"/>
+</svg>

@@ -75,8 +75,9 @@ export default function Home() {
             <h2>Work</h2>
             <ul className="rows">
               {work.map((job) => (
-                <li key={`${job.role}-${job.org}`}>
-                  <div>
+                <li key={`${job.role}-${job.org}`} className="work-row">
+                  <img src={job.logo} alt="" className="work-logo" />
+                  <div className="work-copy">
                     <div className="row-title">{job.role}</div>
                     <div className="row-sub">
                       {[job.org, job.note].filter(Boolean).join(" · ")}
