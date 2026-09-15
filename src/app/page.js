@@ -1,83 +1,138 @@
-// src/app/page.js
-"use client";
-import React, { useState } from "react";
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import SectionWrapper from "../components/SectionWrapper";
 import content from "../data/content";
 
 export default function Home() {
+  const {
+    name,
+    tagline,
+    nav,
+    about,
+    work,
+    projects,
+    awards,
+    certifications,
+    campus,
+  } = content;
+
   return (
     <>
-      <Navbar />
-      <main className="main">
-        <Hero />
-        {Object.entries(content).map(([section, items]) => (
-          <SectionBlock
-            key={section}
-            section={section}
-            items={items}
-          />
-        ))}
-      </main>
-    </>
-  );
-}
-
-function SectionBlock({ section, items }) {
-  // for toggling list items
-  const [openIndex, setOpenIndex] = useState(null);
-  const toggleIndex = (i) => setOpenIndex(prev => (prev === i ? null : i));
-
-  // only for About Me: track which photo is showing
-  const photos = ["/arjun.jpg", "/arjun2.jpg"];
-  const [photoIndex, setPhotoIndex] = useState(0);
-  const cyclePhoto = () =>
-    setPhotoIndex((prev) => (prev + 1) % photos.length);
-
-  return (
-    <SectionWrapper
-      id={section.toLowerCase().replace(/\s+/g, "-")}
-      title={section}
-    >
-      {section === "About Me" ? (
-        <div className="about-me-container">
-          <img
-            src={photos[photoIndex]}
-            alt="Arjun Suri"
-            className="about-me-photo"
-            style={{ cursor: "pointer" }}
-            onClick={cyclePhoto}
-          />
-          <ul className="about-me-text">
-            {items.map((item, idx) => (
-              <li key={idx}>{item.title}</li>
-            ))}
-          </ul>
-        </div>
-      ) : (
-        <ul>
-          {items.map((item, idx) => {
-            if (typeof item === "string") {
-              return <li key={idx}>{item}</li>;
-            }
-            return (
-              <li
-                key={idx}
-                className="click-expand-item"
-                onClick={() => toggleIndex(idx)}
-              >
-                <div className="item-title">{item.title}</div>
-                {openIndex === idx && (
-                  <div className="item-description">
-                    {item.description}
-                  </div>
-                )}
+      <header className="nav">
+        <div className="nav-inner">
+          <a href="#top" className="wordmark">
+            {name}
+          </a>
+          <nav>
+            <ul className="nav-links">
+              {nav.map((item) => (
+                <li key={item.href}>
+                  <a href={item.href}>{item.label}</a>
+                </li>
+              ))}
+              <li>
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                  Resume
+                </a>
               </li>
-            );
-          })}
-        </ul>
-      )}
-    </SectionWrapper>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section className="hero" id="top">
+          <h1>{name}</h1>
+          <p className="hero-sub">{tagline}</p>
+          <div className="hero-ctas">
+            <a className="cta" href="#about">
+              Learn more
+            </a>
+            <a
+              className="cta"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View resume
+            </a>
+          </div>
+        </section>
+
+        <section className="band" id="about">
+          <div className="tile about">
+            <img src={about.photo} alt={name} className="about-photo" />
+            <div>
+              <h2>About</h2>
+              {about.lines.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
+              <h3>Certifications</h3>
+              <p className="certs">{certifications.join(" · ")}</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="band" id="work">
+          <div className="tile">
+            <h2>Work</h2>
+            <ul className="rows">
+              {work.map((job) => (
+                <li key={`${job.role}-${job.org}`}>
+                  <div>
+                    <div className="row-title">{job.role}</div>
+                    <div className="row-sub">
+                      {[job.org, job.note].filter(Boolean).join(" · ")}
+                    </div>
+                  </div>
+                  <div className="row-meta">{job.dates}</div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="band" id="projects">
+          <div className="tile">
+            <h2>Projects</h2>
+            <ul className="rows">
+              {projects.map((project) => (
+                <li key={project.title}>
+                  <div>
+                    <div className="row-title">{project.title}</div>
+                    <div className="row-sub">{project.detail}</div>
+                    {project.description ? (
+                      <p className="row-desc">{project.description}</p>
+                    ) : null}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="band split">
+          <div className="tile" id="awards">
+            <h2>Awards</h2>
+            <ul className="plain">
+              {awards.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="tile" id="campus">
+            <h2>Campus</h2>
+            <ul className="plain">
+              {campus.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <p>
+          Copyright © {new Date().getFullYear()} {name}. All rights reserved.
+        </p>
+      </footer>
+    </>
   );
 }

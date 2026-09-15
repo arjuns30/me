@@ -1,9 +1,9 @@
 import "../styles/globals.css";
-//import { Analytics } from "@vercel/analytics/react"
 
 export const metadata = {
-  title: "Arjun Suri's Portfolio",
-  description: "Come Learn About Me! (built in React & Tailwind)",
+  title: "Arjun Suri",
+  description:
+    "Industrial and Operations Engineering at the University of Michigan.",
 };
 
 export default function RootLayout({ children }) {
