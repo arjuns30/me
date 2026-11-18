@@ -9,7 +9,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      {/* Grammarly can inject attributes on body before hydration. Keep this escape hatch local. */}
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

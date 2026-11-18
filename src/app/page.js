@@ -1,139 +1,36 @@
+import AboutPortrait from "./about-portrait";
+import InterestCursors from "./interest-cursors";
+import PhotoStack from "./photo-stack";
+import { FeaturedWork, Experience, PageMotion } from "./portfolio-sections";
 import content from "../data/content";
 
 export default function Home() {
-  const {
-    name,
-    tagline,
-    nav,
-    about,
-    work,
-    projects,
-    awards,
-    certifications,
-    campus,
-  } = content;
-
   return (
-    <>
-      <header className="nav">
-        <div className="nav-inner">
-          <a href="#top" className="wordmark">
-            {name}
-          </a>
-          <nav>
-            <ul className="nav-links">
-              {nav.map((item) => (
-                <li key={item.href}>
-                  <a href={item.href}>{item.label}</a>
-                </li>
-              ))}
-              <li>
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                  Resume
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+    <main id="top" className="page">
+      <PageMotion />
+      <a className="skip" href="#work">Skip to work</a>
+      <header className="navigation">
+        <a className="identity" href="#top">Arjun Suri</a>
+        <nav aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="/resume.pdf">Resume ↗</a></nav>
       </header>
+      <section className="hero hero-with-photos" aria-labelledby="intro-title">
+        <div className="hero-words">
+        <h1 id="intro-title">Hi I’m Arjun.<br />An engineer, optimizer<br />and people person.</h1>
+        <p className="hero-description">Studying Industrial and Operations Engineering at the University of Michigan. Building solutions at the intersection of people and technology.</p>
+        </div>
+        <PhotoStack />
+      </section>
+      <FeaturedWork />
+      <section className="section about" id="about"><div className="about-copy"><h2>A little about me</h2><p>I’ve worked across enterprise software, supply chain, and data analytics, and learned a lot by starting something of my own. I work best when I’m learning by doing, working with others, or have a whiteboard to brain dump.</p><InterestCursors /></div><figure><AboutPortrait /></figure></section>
+      <Experience />
 
-      <main>
-        <section className="hero" id="top">
-          <h1>{name}</h1>
-          <p className="hero-sub">{tagline}</p>
-          <div className="hero-ctas">
-            <a className="cta" href="#about">
-              Learn more
-            </a>
-            <a
-              className="cta"
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View resume
-            </a>
-          </div>
-        </section>
-
-        <section className="band" id="about">
-          <div className="tile about">
-            <img src={about.photo} alt={name} className="about-photo" />
-            <div>
-              <h2>About</h2>
-              {about.lines.map((line) => (
-                <p key={line}>{line}</p>
-              ))}
-              <h3>Certifications</h3>
-              <p className="certs">{certifications.join(" · ")}</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="band" id="work">
-          <div className="tile">
-            <h2>Work</h2>
-            <ul className="rows">
-              {work.map((job) => (
-                <li key={`${job.role}-${job.org}`} className="work-row">
-                  <img src={job.logo} alt="" className="work-logo" />
-                  <div className="work-copy">
-                    <div className="row-title">{job.role}</div>
-                    <div className="row-sub">
-                      {[job.org, job.note].filter(Boolean).join(" · ")}
-                    </div>
-                  </div>
-                  <div className="row-meta">{job.dates}</div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className="band" id="projects">
-          <div className="tile">
-            <h2>Projects</h2>
-            <ul className="rows">
-              {projects.map((project) => (
-                <li key={project.title}>
-                  <div>
-                    <div className="row-title">{project.title}</div>
-                    <div className="row-sub">{project.detail}</div>
-                    {project.description ? (
-                      <p className="row-desc">{project.description}</p>
-                    ) : null}
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className="band split">
-          <div className="tile" id="awards">
-            <h2>Awards</h2>
-            <ul className="plain">
-              {awards.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="tile" id="campus">
-            <h2>Campus</h2>
-            <ul className="plain">
-              {campus.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      </main>
-
-      <footer className="footer">
-        <p>
-          Copyright © {new Date().getFullYear()} {name}. All rights reserved.
-        </p>
-      </footer>
-    </>
+      <section className="section extras"><div className="section-heading"><h2>On campus & beyond</h2></div><div className="extras-grid"><div><h3>Campus</h3>{content.campus.map(item=><p key={item}>{item}</p>)}</div><div><h3>Awards</h3>{content.awards.map(item=><p key={item}>{item}</p>)}<h3>Certifications</h3><p>{content.certifications.join(" · ")}</p></div></div></section>
+      <section className="section community"><div className="section-heading"><h2>Beyond work</h2></div><div className="community-grid">
+        <article><h3>Scholastic<br />Kid Reporter</h3><p>Writing & reporting</p></article>
+        <article><h3>Volunteer<br />of the Year</h3><p>San Diego County</p></article>
+        <article><h3>San Diego House<br />Rabbit Society</h3><p>Community & animal welfare</p></article>
+      </div></section>
+      <footer id="contact"><p>Always happy to meet good people.</p><a className="email" href="mailto:arsuri@umich.edu">Say hello ↗</a><div className="footer-bottom"><span>Arjun Suri</span><div>{content.links.filter(link=>link.label!=="arsuri@umich.edu").map(link=><a key={link.label} href={link.href}>{link.label} ↗</a>)}</div></div></footer>
+    </main>
   );
 }
